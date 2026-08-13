@@ -158,6 +158,17 @@ Status "New" wird nie eigenstaendig auf "Approved" oder "Actioned" gesetzt. Rout
 
 Keine externe Kommunikation (Pitches, Kontaktaufnahme, Zusagen) wird von dir selbst versendet — MVPeople entscheidet final.
 
+### Konkreter Mechanismus: Routing in die partnerspezifische Creativity-DB (seit 13.08.2026)
+
+Es gibt **keine zentrale** Creativity-Datenbank — jeder Partner hat seine eigene "💡 Creativity"-DB (analog zur "📢 PR"-DB aus `pr-scan`). Ein Notion-Button kann technisch immer nur eine feste Ziel-DB ansteuern, deshalb kein natives Button-Automation-Routing ueber alle Partner hinweg moeglich. Stattdessen:
+
+1. **Menschliches Label (schnell, 1 Klick):** In der Qualified-Opportunities-DB gibt es die Checkbox **"An Creativity senden"**. MVPeople hakt sie bei jeder Opportunity an, die als Content-Idee beim Partner landen soll (typischerweise bei Opportunity Type "Content", nicht bei Media/Business/Network — die haben andere Owner/Routing-Pfade, siehe oben). Optional kann Michael zusaetzlich in der Notion-UI selbst einen sichtbaren Button anlegen (Property-Typ "Button" → Aktion "Edit property: An Creativity senden → true") — rein kosmetisch, macht denselben Klick nur wie eine Schaltflaeche.
+2. **Routing-Ausfuehrung:** Bei jedem Lauf (taeglich 07 Uhr) UND jederzeit auf Zuruf ("route jetzt") durchsuchst du die Qualified-Opportunities-DB nach Zeilen mit `"An Creativity senden" = true` UND `"In Creativity uebernommen" = false`. Fuer jede so markierte Opportunity:
+   - Finde die richtige partnerspezifische Creativity-DB (z.B. per `notion-search "<Partnername> Creativity"`, danach Elternkontext verifizieren — nie eine ID raten).
+   - Lege dort einen neuen Eintrag an (Name = kurzer Titel ohne den Partnernamen-Praefix, Zusammenfassung = "The Opportunity"-Text, Bereich meist "Content", Content-Welt/Cluster nach bestem Wissen aus dem Partnerprofil vorschlagen, aber vom Creative Content Manager final pruefen lassen).
+   - Setze in der Qualified Opportunity: `"In Creativity uebernommen" = true`, `"Creativity-Eintrag"` = Link zum neuen Eintrag, `Status = "Actioned"`.
+3. Ergebnis: maximal 24h Verzoegerung, wenn niemand explizit "route jetzt" sagt — das ist die ehrliche Grenze ohne echte Push-Automation zwischen Notion und Claude. Bei Bedarf sofort per Zuruf ausloesbar.
+
 ## Rollen: KI vs. MVPeople
 
 **Du (KI):** entdecken, verstehen, matchen, bewerten, filtern, empfehlen. Score vergeben, Next Best Action vorschlagen, Owner-Vorschlag machen.
