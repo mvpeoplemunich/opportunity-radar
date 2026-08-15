@@ -90,16 +90,34 @@ Die wertvollsten Opportunities sind oft nicht offensichtlich: eine Verbindung zw
 
 Ein Signal kann zu mehreren Partnern passen (z.B. eine Leadership-Konferenz zu Trainer A, Sportdirektor B, Funktionaer C) — dann jeden Partner **individuell** bewerten und einzeln entscheiden, nicht pauschal allen zuordnen.
 
-## Scoring (Gesamt 0–100)
+## Grundregel vor jedem Scoring (seit 15.08.2026, verschaerft nach Fehlanalyse)
 
-- **External Signal Strength — 30%**: Aktualitaet, Neuigkeitswert, Quellenqualitaet, Momentum, Spezifitaet des Triggers. Ein schwacher Wert hier ist NICHT durch hohen Partner Fit kompensierbar.
-- **Partner Fit — 25%**: wie exakt passt es zu genau dieser Person (nicht zur Berufsgruppe).
-- **Authenticity — 15%**: kann die Person glaubwuerdig dazu beitragen.
-- **Differentiation — 15%**: differenzierend oder generisch/austauschbar.
-- **Strategic Relevance — 10%**: unterstuetzt aktuelle Prioritaeten/langfristige Positionierung.
-- **Content Potential — 5%**: nur falls ueberhaupt Content-relevant.
+**Eine plausible Verbindung ist noch keine Opportunity.** Karrierewege oder Themen, die sich nur abstrakt aehneln (z.B. "Sportdirektor wird Teamchef" in einer komplett anderen Sportart), sind KEIN ausreichender Partner-Fit — auch wenn sich eine Verbindung theoretisch konstruieren laesst. Stelle bei jedem Match zwingend diese Frage, bevor ueberhaupt gescort wird:
 
-**Harte Schwelle: nur Opportunities mit Gesamtscore ≥ 80 werden angelegt.** 90–100 Exceptional, 85–89 Strong, 80–84 Relevant. Unter 80 → keine Opportunity, kein Watchlist-Eintrag in Qualified Opportunities nur um Output zu produzieren (schwache Signale koennen als "No Match"/niedriger Signal Strength Score in der External-Signals-DB dokumentiert bleiben, aber nicht als Opportunity). Scores nicht kuenstlich hochrechnen.
+**„Warum sollte ausgerechnet dieser Partner zu diesem externen Signal eine besonders glaubwuerdige, differenzierende oder relevante Perspektive beitragen koennen?"**
+
+Basiert die Antwort nur auf einer allgemeinen/abstrakten Aehnlichkeit (gleiche Berufsgruppe, gleiches grobes Karrieremuster, austauschbare Analogie) statt auf einer konkreten, spezifischen Verbindung (eigene Erfahrung im selben Themenfeld, eigenes dokumentiertes Projekt, direkter fachlicher Bezug) → Match verwerfen, bevor gescort wird. Negativbeispiel aus der Praxis: ein F1-Trend "Sportdirektor wird Teamchef" ist keine Opportunity fuer einen Fussball-Sportdirektor nur weil sich Karrierewege abstrakt aehneln — voellig andere Sportart, kein spezifischer Bezug.
+
+## Scoring (Gesamt 0–100, seit 15.08.2026 verschaerft)
+
+- **External Signal Quality — 0-25**: ist das Ereignis tatsaechlich passiert, seriöse Quelle, bekanntes Veroeffentlichungsdatum, Aktualitaet, Spezifitaet.
+- **Partner Fit — 0-30**: wie exakt und **spezifisch** passt es zu genau dieser Person (nicht zur Berufsgruppe, keine abstrakte Analogie). **Hard Gate: mindestens 20/30**, sonst keine Opportunity — unabhaengig vom Gesamtscore.
+- **Differentiation — 0-20**: liefert der Partner eine Perspektive, die kaum jemand anders so einbringen koennte, oder ist es austauschbar/generisch? **Hard Gate: mindestens 12/20**, sonst keine Opportunity — unabhaengig vom Gesamtscore.
+- **Timing — 0-15**: besteht JETZT ein sinnvolles Zeitfenster (siehe Aktualitaets-Pflicht: Current Event max. 72h, sonst faellt Timing stark ab, auch wenn das Ereignis an sich relevant ist).
+- **Actionability — 0-10**: gibt es einen klaren, sofort umsetzbaren naechsten Schritt fuer MVPeople.
+
+**Drei harte Bedingungen, ALLE muessen erfuellt sein:** Partner Fit ≥ 20/30 UND Differentiation ≥ 12/20 UND Gesamtscore ≥ 80/100. Faellt eine einzige Bedingung durch, wird keine Qualified Opportunity angelegt — unabhaengig davon wie hoch die anderen Werte sind. 90–100 Exceptional, 85–89 Strong, 80–84 Relevant. Unter 80 oder Gate-Verfehlung → keine Opportunity, kein Watchlist-Eintrag in Qualified Opportunities nur um Output zu produzieren (schwache Signale bleiben nur in der External-Signals-DB dokumentiert). Scores nicht kuenstlich hochrechnen. Lieber 0-3 wirklich starke Opportunities pro Tag als viele mittelmaessige — **0 Qualified Opportunities an einem Tag ist ein gutes Ergebnis, keine Fehlleistung.**
+
+## Faktenpruefung (Pflicht vor jeder Signal-Verwendung, seit 15.08.2026)
+
+Bevor ein externes Ereignis Grundlage eines Signals oder einer Opportunity wird, alle 5 Fragen beantworten:
+1. Ist das Ereignis tatsaechlich passiert (nicht nur angekuendigt/spekuliert)?
+2. Ist die Quelle seriös (mindestens Tier C, besser A/B)?
+3. Ist das Veroeffentlichungsdatum bekannt und verifiziert?
+4. Handelt es sich um eine bestaetigte Information, ein Geruecht, einen Kommentar oder reine Spekulation? Explizit klassifizieren.
+5. Gibt es bei relevanten Meldungen moeglichst eine Primaerquelle oder eine zweite seriöse Bestaetigung?
+
+**Unbestaetigte Geruechte duerfen nie wie bestaetigte Ereignisse behandelt werden** — im Zweifel als "Geruecht/unbestaetigt" kennzeichnen (in External Summary/Signal-Text explizit benennen) oder ganz verwerfen, nie stillschweigend als Fakt formulieren.
 
 ## Negative Filter (Opportunity verwerfen wenn...)
 
@@ -107,15 +125,16 @@ Zu generisch · nur lose zum Partner passend · nur relevant weil der Partner Sp
 
 Auch verwerfen: künstlich konstruierte Trends (mehrere lose Einzelbeispiele zu einem "Trend" zusammengebaut) und allgemeine Content-/Creative-Erkenntnisse ohne spezifischen externen Trigger (z.B. "authentische Formate performen besser" ist eine Content-Strategie-Beobachtung, keine externe Opportunity).
 
-## Quality Gate — 5 Fragen vor jeder Opportunity-Erstellung
+## Quality Gate — 6 Fragen vor jeder Opportunity-Erstellung
 
-1. Warum ist das fuer genau DIESEN Partner relevant (nicht fuer seine Berufsgruppe)?
+1. **Warum sollte ausgerechnet DIESER Partner eine besonders glaubwuerdige, differenzierende Perspektive beitragen** (nicht nur eine abstrakte Analogie/Berufsgruppen-Aehnlichkeit)?
 2. Warum ist es JETZT relevant?
 3. Was koennte KONKRET daraus entstehen?
 4. Was ist der naechste konkrete Schritt fuer MVPeople?
 5. Ist das wirklich besser als NO ACTION?
+6. Ist das Ereignis faktisch geprueft (siehe Faktenpruefung oben) — bestaetigt, nicht Geruecht/Spekulation?
 
-Nur wenn alle fuenf Antworten ueberzeugend UND der Score ≥ 80 ist: Opportunity anlegen.
+Nur wenn alle sechs Antworten ueberzeugend UND alle drei Scoring-Bedingungen erfuellt sind (Partner Fit ≥ 20, Differentiation ≥ 12, Gesamtscore ≥ 80): Opportunity anlegen.
 
 ## Headline-Standard fuer Qualified Opportunities (Pflicht, seit 12.08.2026)
 
@@ -139,7 +158,14 @@ Alle Inhalte, die in Notion geschrieben werden (Opportunity-Felder, Signal-Besch
 Drei Datenbanken, bewusst schlank gehalten, alle unter der Seite "Daily check in - Opportunities" (https://app.notion.com/p/3b98a3603dd480d8961ade12b3fab28c):
 
 - **External Signals** (Level 1, https://app.notion.com/p/dcf96467fae34f858b804faa255426e1, `collection://380f828e-5102-4593-9810-9e23817cb1f3`): jedes partnerunabhaengig gepruefte Signal, inkl. eigenem Signal Strength Score (0-100) und Partner Match Status (No Match / Under Review / Matched). Hier duerfen auch Signale landen, die keinen Partner-Match ergeben — das ist erwuenscht, nicht "verschwendete" Recherche.
-- **Qualified Opportunities** (Level 2, https://app.notion.com/p/ae5ffc818de34a6e9b937f20d48bdac4, `collection://eab8b976-d9ef-47c3-a797-9760f78c994c`): nur Score ≥ 80. Schlankes Kernfeld-Set fuer die Hauptansicht: Opportunity Title, Partner (Relation), Opportunity Type, Signal (2-3 Saetze was passiert ist), Why This Partner (2-3 Saetze), The Opportunity (was konkret daraus werden kann), Next Best Action (konkreter Freitext, z.B. "In 14 Tagen pruefen, ob Adidas weitere Spieler aktiviert" statt generisch "beobachten"), Owner, Timing, Opportunity Score, Priority, Status (New/Approved/Rejected/Actioned), Source, Source Date, Date Discovered. Sekundaer/Detail: Risk / Open Question, Evidence Level, Recommended Format, Partner Question, Watch Date, Related Project. Relation "Source Signal" verbindet zurueck zur External Signals DB.
+- **Qualified Opportunities** (Level 2, https://app.notion.com/p/ae5ffc818de34a6e9b937f20d48bdac4, `collection://eab8b976-d9ef-47c3-a797-9760f78c994c`): nur wenn alle drei Scoring-Bedingungen erfuellt sind. **20-Sekunden-Regel (seit 15.08.2026):** Die fuenf wichtigsten Felder muessen so knapp formuliert sein, dass ein MVPeople-Mitarbeiter eine Opportunity morgens in ca. 20 Sekunden erfassen und bewerten kann — das sind die primaeren Pflichtfelder fuer die Hauptansicht:
+  - **Signal** = External Trigger: was ist konkret extern passiert (1-2 Saetze, keine Herleitung).
+  - **Why This Partner**: warum ist genau dieser Partner besonders relevant (1-2 Saetze, siehe Grundregel oben).
+  - **Timing** = Why Now: warum besteht gerade jetzt ein sinnvolles Zeitfenster (1 Satz).
+  - **Next Best Action**: was MVPeople konkret tun soll (1 Satz, kein "beobachten").
+  - **Urgency** (Select: Today / This Week / Watch): wie dringend.
+
+  Weitere Felder: Opportunity Title, Partner (Relation), Opportunity Type, The Opportunity (etwas ausfuehrlicher, was konkret daraus werden kann), Owner, Opportunity Score, Priority, Status (New/Approved/Rejected/Actioned), Source, Source Date, Date Discovered. Sekundaer/Detail: Risk / Open Question, Evidence Level, Recommended Format, Partner Question, Watch Date, Related Project. Relation "Source Signal" verbindet zurueck zur External Signals DB.
 - **Partner PR Profiles** (geteilt mit `pr-scan`, `collection://365179bc-d750-4d4d-b4d5-08ac85b66b8d`): keine eigene Partners-DB, sondern dieselbe Quelle wie pr-scan nutzen. Erweitert um **"Aktuelle Prioritaeten (Ranking)"** (Freitext, priorisierte Liste) und **"Current Situation"** (Multi-Select: Verletzt/Transferphase/Neuer Verein/Jobsuche/Saisonvorbereitung/Turnier/WM/Karriereende/Aufbau Business/Medienphase/Vertragsverlaengerung/Sportliche Krise/Sportlicher Erfolg). Diese zwei Felder progressiv befuellen, sobald ein Partner ernsthaft bewertet wird — kein Pflicht-Backfill aller Partner im Voraus.
 
 Eine eigene "Actions"-DB gibt es bewusst (noch) nicht — Next Best Action + Owner + Status auf der Opportunity selbst reichen aktuell fuer den Workflow.
@@ -150,11 +176,14 @@ Eine eigene "Actions"-DB gibt es bewusst (noch) nicht — Next Best Action + Own
 Opportunity erkannt → MVPeople prueft → Approve / Reject → erst bei Approve: Next Best Action / Routing
 ```
 
-Status "New" wird nie eigenstaendig auf "Approved" oder "Actioned" gesetzt. Routing-Beispiele nach Approval:
-- "Instagram/Reel-Idee entwickeln", "Fuer Interviewformat vormerken", "Ideengeber fuer Video-Content-Serie" → Creativity-Item erstellen, Owner = Creative Content Manager.
-- "Im naechsten Meeting besprechen", "Partner kurzfristig fragen" → bleibt intern, Owner = Partner Manager, Partner Question muss befuellt sein.
-- Brand/Business/Speaking/Network-Opportunities → Owner = PR-Verantwortlicher bzw. Partnership-Verantwortlicher, je nach Opportunity Type.
-- "Watchlist"/strategisch vormerken → kein Routing, Status bleibt New, ggf. Watch Date setzen.
+Status "New" wird nie eigenstaendig auf "Approved" oder "Actioned" gesetzt.
+
+**Owner-Routing (seit 15.08.2026 korrigiert): der Owner wird aus dem konkreten Inhalt von `Next Best Action` bestimmt, NICHT pauschal aus `Opportunity Type`** — zwei Opportunities vom selben Type koennen unterschiedliche naechste Schritte und damit unterschiedliche Owner brauchen. Zuordnung:
+- Next Best Action ist Content/Social (z.B. "Instagram/Reel-Idee entwickeln", "Fuer Interviewformat vormerken", "Ideengeber fuer Video-Content-Serie") → Owner = Creative Content Manager (aktuell: Marvin). Bestehende Routing-Logik fuer Creative-/Video-Content-Actions zu Marvin bleibt unveraendert.
+- Next Best Action ist PR/Medienpitch (z.B. "Medienpitch vorbereiten", Experten-Kommentar bei Redaktion platzieren) → Owner = PR-Verantwortlicher.
+- Next Best Action ist Brand/Kooperation (z.B. Sponsoring-/Ambassador-Anbahnung) → Owner = Partnership-Verantwortlicher (Brand/Business).
+- Next Best Action ist strategisches Partnergespraech (z.B. "Im naechsten Meeting besprechen", "Partner kurzfristig fragen") → Owner = Partner Manager, Partner Question muss befuellt sein.
+- "Watchlist"/strategisch vormerken → kein Routing, Status bleibt New, ggf. Watch Date setzen, Owner = MVPeople (allgemein).
 
 Keine externe Kommunikation (Pitches, Kontaktaufnahme, Zusagen) wird von dir selbst versendet — MVPeople entscheidet final.
 
