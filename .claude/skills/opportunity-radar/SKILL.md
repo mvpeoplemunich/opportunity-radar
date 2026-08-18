@@ -22,9 +22,21 @@ Externe Welt → relevantes Signal (partnerunabhaengig geprueft) → Signal-Qual
 
 **Explizit NICHT:** Partner → Themenprofil → passende externe Info suchen → Content-Idee konstruieren. Der Partner-Knowledge-Layer (Partner PR Profiles, Meetings, Content-Historie) ist **ausschliesslich Filter und Matching-System, niemals die Quelle** der Opportunity. Eine Opportunity muss immer mit einem eigenstaendig relevanten externen Signal beginnen — nicht mit einem Partner-Thema, zu dem im Netz etwas gesucht wurde.
 
-## Stufe 1: External Discovery (partnerunabhaengig)
+## Stufe 1: External Discovery — zweistufig (seit 18.08.2026)
 
-Recherchiere zunaechst **ohne jeden Partnerbezug**, ueber acht feste Research Radars (Details, Quellen, Tiers und Query-Pools: siehe `research-concept-draft.md` im selben Ordner, von Michael am 12.08.2026 freigegeben):
+```
+LEVEL A — Open World Discovery (8 Radars, komplett partnerunabhaengig)
+        +
+LEVEL B — Portfolio Topic Discovery (entpersonalisierte Themen aus dem Gesamtportfolio)
+        ↓
+   kombinierter Query-Pool fuer den Lauf
+```
+
+**Level A** bleibt wie bisher: acht Radars, keine Partnerdaten im Zugriff (Details unten).
+
+**Level B** ist neu: zusaetzlich fliesst die **Portfolio-Topic-Radar-Liste** (Textblock oben auf der "Daily check in - Opportunities"-Seite, z.B. "Leadership & Decision-Making", "Intercultural / International Experience in Coaching") in die Suchanfragen ein — aber IMMER als abstraktes Thema, nie mit Partnername verknuepft. Diese Liste ist aus den `Opportunity Fields` aller aktiven Partner aggregiert (siehe Stufe 2) und wird bei der Weekly Gap Analysis aktualisiert, nicht taeglich neu erfunden. **Falsch:** "Suche Leadership-News fuer Ralf Rangnick." **Richtig:** "Leadership & Decision-Making ist ein Portfolio-Thema — beobachte neue Entwicklungen dazu." Der Unterschied zu Level A ist nur die Herkunft der Suchrichtung, nicht der Grad an Partnerbezug in der Anfrage selbst — der bleibt bei beiden Ebenen null.
+
+Recherchiere ueber acht feste Research Radars (Details, Quellen, Tiers und Query-Pools: siehe `research-concept-draft.md` im selben Ordner, von Michael am 12.08.2026 freigegeben):
 
 1. **Football Radar** — Profifussball DE/international, Trainer, Taktik, Sportdirektoren, Regeln, Verbaende (DFB/DFL/UEFA/FIFA/IFAB/OeFB), Nachwuchs. Kein allgemeiner Ergebnis-Feed — nur Funde mit uebergeordnetem Impuls.
 2. **Sports Business Radar** — Sponsoring, Investments, Private Equity, Multi-Club Ownership, Medienrechte, Athlete Entrepreneurship, Sport-Tech, Club Ownership.
@@ -44,6 +56,24 @@ Mehrere Artikel zum selben Ereignis = **ein** Signal, nicht mehrere (Clustering,
 ### Technische Grenzen (ehrlich, siehe `research-concept-draft.md` Abschnitt 9)
 
 Kein Login/Paywall-Zugriff, keine nativen Social-Media-APIs (LinkedIn/X/Reddit/TikTok/Instagram — nur oeffentlich indexierte Treffer), kein RSS-Aggregator/persistentes Feed-Monitoring, keine strukturierte Wissenschafts-API. Datumsverifikation bleibt der groesste Schwachpunkt — siehe Aktualitaets-Pflicht unten, im Zweifel verwerfen statt raten.
+
+### Multi-Horizon-Recherche (seit 18.08.2026)
+
+Jeder Lauf recherchiert bewusst in drei Zeitfenstern, nicht nur Reactive — ein 45 Tage alter, hochwertiger Report kann wertvoller sein als News von heute. Jedes Signal bekommt das Notion-Feld `Time Horizon`:
+
+- **Reactive (0-72h):** Breaking News, aktuelle Ereignisse/Aussagen, Regeländerungen, Personalien, kurzfristige Debatten.
+- **Momentum (7-30 Tage):** wachsende Trends, Studien, Reports, wiederkehrende Themen, neue Geschaeftsmodelle, relevante Interviews.
+- **Structural (bis 90 Tage):** hochwertige Studien, strukturelle Veraenderungen, internationale Entwicklungen, aussergewoehnliche Cases, neue Management-/Leadership-Ansaetze.
+
+`Time Horizon` ist unabhaengig von `Signal Type` — die bestehende 72h-Pflicht fuer den Signal-Typ "Current Event" gilt weiterhin unveraendert.
+
+### Erweiterte Signaltypen (seit 18.08.2026)
+
+`Signal Type` (Select, schlank): `Current Event` · `Emerging Trend` · `Study/Research` · `Strong Statement/Debate` · `Business/Deal` · `Creative Format`.
+
+Zusaetzlich `Signal Angle` (Multi-Select, mehrere pro Signal moeglich, fuer die granulare Einordnung): `Surprising Statistic` · `Contrarian View` · `New Thesis` · `Interview Insight` · `Cross-Industry Case` · `Leadership Case` · `Sports Case` · `Behaviour Change` · `Regulation` · `Communication Mechanic` · `Campaign` · `Content Trend` · `Media Development` · `Technology` · `Business Model` · `Investment/Deal` · `Social Change`.
+
+Bei der Recherche aktiv Fragen stellen wie: "Welche neue Zahl veraendert gerade die Sicht auf ein Thema?", "Welche Studie widerspricht bisherigen Annahmen?", "Welche ungewoehnliche Aussage einer relevanten Person loest eine Debatte aus?", "Welcher Case aus einer anderen Branche liesse sich auf Sport uebertragen?", "Welche neue Content-/Kommunikationsmechanik funktioniert gerade aussergewoehnlich gut?"
 
 ## External Signal Strength — Gatekeeper vor jedem Partner-Matching
 
@@ -65,7 +95,18 @@ Bei jedem als "Current Event" eingestuften Fund: Gegencheck auf innere Widerspru
 
 **Active-Filter zuerst (Pflicht, seit 12.08.2026 scharf geschaltet):** Der Partnerpool wird VOR jedem Matching auf `"Partner Status" = 'Active'` gefiltert (`collection://365179bc-d750-4d4d-b4d5-08ac85b66b8d`). Inactive/Paused-Partner werden nie gegen ein Signal geprueft, nicht nur im Output ausgeblendet. Aktuell (12.08.2026) `Inactive`: Benjamin Ehresmann, Michael Wimmer. Tomas Zorn hat ueberhaupt kein Partner-PR-Profile-Entry in dieser DB — dadurch bereits strukturell ausgeschlossen, kein Status noetig; falls er spaeter offiziell aufgenommen wird, dann direkt mit `Partner Status = Inactive` anlegen, nicht mit `Active`. Alle anderen 14 Partner stehen auf `Active`. Status vor jedem Lauf kurz gegenchecken (kann sich aendern), nicht auswendig annehmen.
 
-Erst wenn ein Signal den Gatekeeper bestanden hat: Pruefe gegen **alle** verfuegbaren Partnerdaten in Notion — Partner PR Profile (Core Positioning, Current Situation, Aktuelle Prioritaeten (Ranking), Themenwelten-Gewichtung, Sensible Themen, Do Not Pitch Notes), die partnerspezifische Meetings-DB (Persoenlichkeitsanalyse zuerst), Content-Historie, bestehende Creativity-Eintraege.
+Erst wenn ein Signal den Gatekeeper bestanden hat: Pruefe gegen **alle** verfuegbaren Partnerdaten in Notion — Partner PR Profile (Core Positioning, Current Situation, Aktuelle Prioritaeten (Ranking), Themenwelten-Gewichtung, Sensible Themen, Do Not Pitch Notes, **Opportunity Fields + Opportunity Fields Evidence**), die partnerspezifische Meetings-DB (Persoenlichkeitsanalyse zuerst), Content-Historie, bestehende Creativity-Eintraege.
+
+### Partner Opportunity Profile
+
+Jeder aktive Partner hat auf Partner PR Profiles ein Feld `Opportunity Fields` (Multi-Select, z.B. "Leadership", "International Experience", "Athlete Entrepreneurship") plus `Opportunity Fields Evidence` (Kurzbeleg woher das Feld kommt). Diese Felder sind **destilliert aus vorhandenen, bestaetigten Daten** (Core Positioning, PR-Trigger, Themenwelten-Gewichtung, Meetings) — niemals erfunden. Nutze sie als ersten Filter beim Matching: ein Signal, das keinem `Opportunity Field` eines Partners entspricht, braucht eine besonders gute Begruendung, um trotzdem weiterverfolgt zu werden. Aktualisiere die Felder, wann immer ein Partnerprofil ohnehin bearbeitet wird (neues Meeting, neue Erkenntnis) — kein separater Pflegeaufwand.
+
+### Direct Match vs. Analogical Match (seit 18.08.2026)
+
+Setze bei jedem Partner-Kandidaten `Match Type`:
+
+- **Direct Match**: das Signal betrifft unmittelbar ein `Opportunity Field`, fuer das Evidence existiert (Beispiel: Leadership-Studie ↔ Rangnicks dokumentierte Leadership-Positionierung als "Fussballprofessor").
+- **Analogical Match**: das Signal stammt aus einer anderen Branche/Sportart/Situation, enthaelt aber einen potenziell uebertragbaren Mechanismus. Pflicht bei Analogical Match: explizit benennen (a) welcher konkrete Mechanismus uebertragbar ist, (b) warum genau dieser Partner eine glaubwuerdige Verbindung dazu hat. Reine Rollen-/Karriereweg-Aehnlichkeit reicht nicht — das ist exakt die Grundregel von oben. Analogical Matches werden beim Scoring strenger behandelt: der Differentiation-Gate (≥12/20) ist hier der Haupt-Hebel gegen konstruierte Verbindungen.
 
 Matching-Formel ist **nicht** External Signal × allgemeine Themenwelt. Sondern: External Signal × Current Priorities × Current Situation × Strategic Goals × Brand DNA × Positioning × Career Stage × Timing × Actionability × Uniqueness. **Aktuelle Prioritaeten und Current Situation eines Partners wiegen staerker als seine langfristigen, allgemeinen Themenwelten** — ein Partner, dessen aktuelle Prioritaet explizit "kein Fokus auf Gesundheitscontent" ist, bekommt keine Gesundheits-Opportunity, selbst wenn Gesundheit langfristig in seinem Profil auftaucht.
 
@@ -73,14 +114,24 @@ Bei vier Partnern (Mirko Slomka, Maximilian Arnold, Kilian Fischer, Michael Koel
 
 **"No Match" ist ein erwuenschtes Ergebnis**, kein Fehlschlag. Kein Partner muss taeglich oder woechentlich eine Opportunity bekommen.
 
-## Signal ≠ Opportunity (zwei Ebenen)
+## No Match / Potential Match / Qualified Opportunity (drei Ergebnisse, seit 18.08.2026 praezisiert)
 
-- **Level 1 — External Signal**: eine partnerunabhaengig bereits interessante externe Information. Muss keine Aktion ausloesen. Lebt in der **External Signals**-DB, unabhaengig davon ob ein Partner-Match gefunden wurde.
-- **Level 2 — Qualified Opportunity**: entsteht nur, wenn aus einem bereits geprueften Signal fuer einen konkreten Partner eine sinnvolle, aussergewoehnlich gut begruendete Handlungsmoeglichkeit entsteht. Lebt in der **Qualified Opportunities**-DB, nur nach Bestehen des Quality Gates (unten) und Score ≥ 80.
+Nach dem Partner-Matching entsteht fuer jedes Signal genau eines von drei Ergebnissen — `Partner Match Status` auf External Signals:
+
+1. **No Match**: keine ausreichend konkrete oder strategisch sinnvolle Verbindung zu einem aktiven Partner. Keine weitere Aktion. Erwuenschtes, valides Ergebnis.
+2. **Potential Match**: eine relevante, nachvollziehbare Verbindung existiert, aber entscheidendes Partnerwissen fehlt (persoenliche Haltung unbekannt, Erfahrung nicht ausreichend dokumentiert, oeffentliches Interesse unklar). **Fehlendes Partnerwissen fuehrt NICHT automatisch zu No Match — und wird NIE durch KI-Inferenz ersetzt.** Ein Potential Match ist ein angereicherter External-Signal-Eintrag, KEINE eigene Seite: `Partner` (Relation), `Match Type`, `Partner Question` (was fehlt konkret) und `Next Best Action` (z.B. "im naechsten Meeting ansprechen") werden direkt auf dem Signal befuellt.
+3. **Qualified Opportunity**: die Verbindung ist durch vorhandenes Wissen ausreichend belegt, alle drei Scoring-Bedingungen sind erfuellt (siehe unten) — erst dann entsteht eine eigene Seite in Qualified Opportunities, mit Ruecklink (`Source Signal`) zum urspruenglichen Signal.
+
+Ein Potential Match kann spaeter zur Qualified Opportunity aufgestuft werden (z.B. nach einem Partnergespraech, das die Partner Question beantwortet) — dann erst wird die eigene Seite angelegt, Evidence Level springt von Unknown/Inferred auf Explicit.
+
+**Level 1 — External Signal**: eine partnerunabhaengig bereits interessante externe Information, unabhaengig vom Match-Ergebnis. Lebt in der **External Signals**-DB.
+**Level 2 — Qualified Opportunity**: siehe oben, Score ≥ 80 nach allen drei Bedingungen.
 
 ## Opportunity-Kategorien (Opportunity Type, mehrere moeglich)
 
-Media (Podcast/Interview/TV/Magazin/Expertenkommentar) · Content (LinkedIn/Instagram/Video/Reel/Story/Longform — **nur EINE Kategorie unter mehreren, niemals automatischer Default**) · Brand (Sponsoring/Ambassador/Kooperation/Testimonial) · Business (Investment/Advisory/Beteiligung/Joint Venture) · Speaking (Keynote/Panel/Kongress/Workshop) · Network (Person kennenlernen, Kontakt reaktivieren, Warm Intro) · Positioning (Themenfeld besetzen, Narrativ staerken) · Career (Karriereoption, Weiterbildung, Post-Career) · Knowledge (Info, die der Partner kennen sollte, nicht zwingend oeffentlich) · Watchlist (interessant, aktuell keine Aktion).
+Media (Podcast/Interview/TV/Magazin/Expertenkommentar) · Content (LinkedIn/Instagram/Video/Reel/Story/Longform — **nur EINE Kategorie unter mehreren, niemals automatischer Default**) · Brand (Sponsoring/Ambassador/Kooperation/Testimonial) · Business (Investment/Advisory/Beteiligung/Joint Venture) · Speaking (Keynote/Panel/Kongress/Workshop) · Network (Person kennenlernen, Kontakt reaktivieren, Warm Intro) · Positioning (Themenfeld besetzen, Narrativ staerken) · Career (Karriereoption, Weiterbildung, Post-Career) · Knowledge (Info, die der Partner kennen sollte, nicht zwingend oeffentlich) · Watchlist (interessant, aktuell keine Aktion) · **Conversation** (z.B. "im naechsten Partnermeeting ansprechen" — wertvoll auch ohne Content-Output, seit 18.08.2026) · **Partnership** (Kooperationen ohne direkten Investment-Charakter, eigenstaendig von Business, seit 18.08.2026).
+
+Stelle bei jedem Match nicht nur "Kann daraus Content entstehen?", sondern "Welche konkrete Handlungsmoeglichkeit entsteht fuer MVPeople oder den Partner?"
 
 **Content ist nicht automatisch der wertvollste Output.** Bei jedem Signal zuerst fragen: welche Opportunity-Art ist hier strategisch am wertvollsten (Media/Speaking/Business/Network/Knowledge), bevor an Content gedacht wird.
 
@@ -157,7 +208,7 @@ Alle Inhalte, die in Notion geschrieben werden (Opportunity-Felder, Signal-Besch
 
 Drei Datenbanken, bewusst schlank gehalten, alle unter der Seite "Daily check in - Opportunities" (https://app.notion.com/p/3b98a3603dd480d8961ade12b3fab28c):
 
-- **External Signals** (Level 1, https://app.notion.com/p/dcf96467fae34f858b804faa255426e1, `collection://380f828e-5102-4593-9810-9e23817cb1f3`): jedes partnerunabhaengig gepruefte Signal, inkl. eigenem Signal Strength Score (0-100) und Partner Match Status (No Match / Under Review / Matched). Hier duerfen auch Signale landen, die keinen Partner-Match ergeben — das ist erwuenscht, nicht "verschwendete" Recherche.
+- **External Signals** (Level 1, https://app.notion.com/p/dcf96467fae34f858b804faa255426e1, `collection://380f828e-5102-4593-9810-9e23817cb1f3`): jedes partnerunabhaengig gepruefte Signal, inkl. Signal Strength Score (0-100), Time Horizon, Signal Type/Signal Angle, und Partner Match Status (No Match / Under Review / **Potential Match** / Matched - Opportunity Created). Bei Potential Match zusaetzlich befuellt: `Partner` (Relation), `Match Type`, `Partner Question`, `Next Best Action`. Hier duerfen auch Signale landen, die keinen Partner-Match ergeben — das ist erwuenscht, nicht "verschwendete" Recherche.
 - **Qualified Opportunities** (Level 2, https://app.notion.com/p/ae5ffc818de34a6e9b937f20d48bdac4, `collection://eab8b976-d9ef-47c3-a797-9760f78c994c`): nur wenn alle drei Scoring-Bedingungen erfuellt sind. **20-Sekunden-Regel (seit 15.08.2026):** Die fuenf wichtigsten Felder muessen so knapp formuliert sein, dass ein MVPeople-Mitarbeiter eine Opportunity morgens in ca. 20 Sekunden erfassen und bewerten kann — das sind die primaeren Pflichtfelder fuer die Hauptansicht:
   - **Signal** = External Trigger: was ist konkret extern passiert (1-2 Saetze, keine Herleitung).
   - **Why This Partner**: warum ist genau dieser Partner besonders relevant (1-2 Saetze, siehe Grundregel oben).
@@ -166,7 +217,27 @@ Drei Datenbanken, bewusst schlank gehalten, alle unter der Seite "Daily check in
   - **Urgency** (Select: Today / This Week / Watch): wie dringend.
 
   Weitere Felder: Opportunity Title, Partner (Relation), Opportunity Type, The Opportunity (etwas ausfuehrlicher, was konkret daraus werden kann), Owner, Opportunity Score, Priority, Status (New/Approved/Rejected/Actioned), Source, Source Date, Date Discovered. Sekundaer/Detail: Risk / Open Question, Evidence Level, Recommended Format, Partner Question, Watch Date, Related Project. Relation "Source Signal" verbindet zurueck zur External Signals DB.
-- **Partner PR Profiles** (geteilt mit `pr-scan`, `collection://365179bc-d750-4d4d-b4d5-08ac85b66b8d`): keine eigene Partners-DB, sondern dieselbe Quelle wie pr-scan nutzen. Erweitert um **"Aktuelle Prioritaeten (Ranking)"** (Freitext, priorisierte Liste) und **"Current Situation"** (Multi-Select: Verletzt/Transferphase/Neuer Verein/Jobsuche/Saisonvorbereitung/Turnier/WM/Karriereende/Aufbau Business/Medienphase/Vertragsverlaengerung/Sportliche Krise/Sportlicher Erfolg). Diese zwei Felder progressiv befuellen, sobald ein Partner ernsthaft bewertet wird — kein Pflicht-Backfill aller Partner im Voraus.
+- **Partner PR Profiles** (geteilt mit `pr-scan`, `collection://365179bc-d750-4d4d-b4d5-08ac85b66b8d`): keine eigene Partners-DB, sondern dieselbe Quelle wie pr-scan nutzen. Erweitert um **"Aktuelle Prioritaeten (Ranking)"** (Freitext, priorisierte Liste), **"Current Situation"** (Multi-Select), **"Opportunity Fields"** + **"Opportunity Fields Evidence"** (destilliert aus vorhandenen Daten, siehe Stufe 2), **"Unterrepraesentierte Opportunity Fields (30d)"** + **"Letzter Gap-Check"** (siehe Weekly Gap Analysis unten), **"Naechstes Meeting"** (Date, fuer Partner Matching Priority). Fuer alle 14 aktiven Partner am 18.08.2026 einmalig befuellt (Opportunity Fields), danach progressiv aktualisieren, sobald ein Partner ohnehin bearbeitet wird.
+
+## Weekly Gap Analysis (seit 18.08.2026)
+
+Woechentlich (oder auf Zuruf): fuer jeden aktiven Partner pruefen, welche `Opportunity Fields` in den letzten 30 Tagen kaum/gar nicht durch External Signals bedient wurden (gefiltert auf `Partner Match Status IN (Potential Match, Matched - Opportunity Created)` mit diesem Partner). Ergebnis in `Unterrepraesentierte Opportunity Fields (30d)` + `Letzter Gap-Check` (Datum) festhalten. Die naechste Discovery erhoeht dann temporaer die Rechercheintensitaet in den entsprechenden **entpersonalisierten** Portfolio-Themen (z.B. "Talent & Player Development" statt "Suche News fuer Partner X zu Nachwuchs") — nie mit Partnerbezug in der Suchanfrage selbst.
+
+## Dynamische Discovery-Gewichtung (seit 18.08.2026)
+
+Gewichte die Recherche anhand: aktuellem externem Momentum (Signal Strength Scores der letzten Tage), Qualitaet bisheriger Signale pro Radar, unterrepraesentierten Opportunity Fields (siehe oben), saisonalen Sportereignissen, neuen Studien/Reports. **Pflicht-Gegengewicht:** mindestens 2 von 8 Radaren pro Lauf bleiben bewusst ungewichtet/explorativ (rotierend), unabhaengig von bisherigen Trefferquoten — sonst entsteht eine Filter Bubble, die nur noch das findet, was bisher funktioniert hat.
+
+## Partner Matching Priority (seit 18.08.2026)
+
+Nicht jeder Partner braucht taeglich identische Matching-Tiefe. Prioritaet ergibt sich aus bereits vorhandenen Feldern: `Aktuelle Prioritaeten (Ranking)`, `Current Situation` (z.B. Sportlicher Erfolg, Medienphase, Jobsuche erhoehen Prioritaet), `Naechstes Meeting` (bevorstehendes Gespraech erhoeht Prioritaet), `Letztes Profil-Update`. **Wichtig: hoehere Prioritaet bedeutet tieferes/haeufigeres Matching, NIEMALS niedrigere Scoring-Schwellen.**
+
+## Discovery Health Metrics (seit 18.08.2026, On-Demand)
+
+Keine eigene Tabelle — alle Rohdaten existieren bereits als Felder auf External Signals (`Domain`, `Time Horizon`, `Partner Match Status`, `Match Type`). Auf Zuruf oder im Rahmen der Weekly Gap Analysis per SQL-Aggregation berechnen: Anzahl Signale pro Radar/Time Horizon, Anzahl No Match/Potential Match/Qualified Opportunity, Anzahl Direct vs. Analogical Matches, Signal→Potential-Match-Rate, Signal→Qualified-Opportunity-Rate, Potential-Match→Qualified-Opportunity-Rate. Dient **ausschliesslich der Diagnose** ("Discovery zu eng?" vs. "Matching zu streng?"), niemals als Zielquote.
+
+## MVPeople Feedback Loop (seit 18.08.2026)
+
+Feld `MVPeople Feedback` auf Qualified Opportunities (Select: Strong / Interesting / Not Relevant / Too Generic / Too Constructed / Already Known / Wrong Partner / Wrong Timing / Need More Partner Knowledge) wird von MVPeople manuell gesetzt, analog zu `Status`. Fliesst als Kontext in kuenftige Laeufe ein (z.B. "bei diesem Partner wurde zuletzt ein Analogical Match als 'Too Constructed' abgelehnt — bei aehnlichen Faellen besonders streng pruefen"), **niemals** als Optimierung auf bereits erfolgreiche Muster — sonst verengt sich die Discovery genau auf das Gegenteil von Punkt "Filter Bubble verhindern" oben.
 
 Eine eigene "Actions"-DB gibt es bewusst (noch) nicht — Next Best Action + Owner + Status auf der Opportunity selbst reichen aktuell fuer den Workflow.
 
@@ -207,7 +278,7 @@ Es gibt **keine zentrale** Creativity-Datenbank — jeder Partner hat seine eige
 
 Kein Newsfeed. Ziel: ein MVPeople-Mitarbeiter versteht in 2-3 Minuten, was seit den letzten Tagen extern passiert ist, das fuer einen Partner wirklich relevant sein koennte — maximal 3-5 starke Punkte pro Partner, nicht 20 News.
 
-Format pro Partner:
+Format pro Partner — Qualified Opportunities zuerst:
 
 ```
 🔥 [Score]/100 – [Partner]
@@ -217,7 +288,16 @@ Next Best Action: [konkret]
 Quelle: [Quelle] · [Datum]
 ```
 
-Wenn nichts Starkes gefunden wurde: **"Heute keine Opportunities mit ausreichender Qualitaet."** Das ist ein explizit erwuenschtes, valides Ergebnis — niemals eine schwache Opportunity nur erzeugen, um Output zu liefern.
+Zusaetzlich (seit 18.08.2026) eine **kuratierte Auswahl** der staerksten Potential Matches mit befuellter Partner Question — nicht alle, nur die relevantesten:
+
+```
+❓ [Partner] – Potential Match
+Extern: [was ist passiert]
+Frage an Partner: [Partner Question]
+Next Best Action: [z.B. "im naechsten Meeting ansprechen"]
+```
+
+External Signals ohne Match (No Match) bleiben im System-Layer und tauchen im Check-in nicht auf. Wenn nichts Starkes gefunden wurde: **"Heute keine Opportunities mit ausreichender Qualitaet."** Das ist ein explizit erwuenschtes, valides Ergebnis — niemals eine schwache Opportunity nur erzeugen, um Output zu liefern.
 
 ## Erfolgskriterium
 
