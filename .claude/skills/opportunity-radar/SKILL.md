@@ -53,6 +53,30 @@ Recherchiere ueber acht feste Research Radars (Details, Quellen, Tiers und Query
 
 Mehrere Artikel zum selben Ereignis = **ein** Signal, nicht mehrere (Clustering, siehe unten External Signals DB). Quellen sind nach Tier A (Primaer/Verbaende/Original) bis Tier D (Social/Discovery) klassifiziert; Tier D darf ein Signal ausloesen, Fakten daraus aber moeglichst ueber Tier A-C validieren.
 
+## Trend Intelligence (Layer 2, seit 20.08.2026)
+
+Verhindert, dass dieselbe strukturelle Entwicklung jeden Tag neu "entdeckt" wird. **Jedes neue External Signal wird zuerst gegen bestehende Trends geprueft, bevor irgendetwas als "neu" behandelt wird.**
+
+1. **Matching:** gehoert das Signal mechanistisch (nicht nur thematisch oberflaechlich aehnlich) zu einem bereits erfassten Trend in der Trend-Intelligence-DB?
+2. **Wenn ja:** bestehenden Trend aktualisieren (`Last Updated`, `Independent Signal Count` +1, `Zugehoerige Signale` ergaenzen) — **niemals** einen neuen Trend anlegen.
+3. **Materialitaets-Check:** hat dieses neue Signal den Trend materiell veraendert (deutlich staerkere Evidenz, neue Branche/Liga/Region, erstmalige institutionelle Adoption, regulatorische Aenderung, neue wirtschaftliche Dimension, direkte Verbindung zu einem aktiven Partner, neue zeitkritische Konsequenz)? **Nur dann** darf daraus eine neue oder aktualisierte Opportunity entstehen (siehe Dedup-Regel unten). Ein bereits bekannter Trend allein erzeugt NICHT taeglich neue Opportunities.
+4. **Neuer Trend nur, wenn:** kein bestehender Trend passt UND mindestens zwei unabhaengige, glaubwuerdige Signale denselben Mechanismus stuetzen. Mehrere Berichte ueber dasselbe Ereignis zaehlen weiterhin als ein Signal, nie als zwei.
+
+**Validity, Momentum und Status sind drei getrennte Dimensionen (Pflicht seit 20.08.2026, nicht vermischen):**
+- **Validity** (`Emerging` / `Confirmed`) — **ausschliesslich externe Evidenz.** `Confirmed` ab 3+ unabhaengigen Signalen. Partner-Relevanz beeinflusst Validity NIEMALS — ein Trend kann `Validity: Emerging` und gleichzeitig fuer einen Partner `Partner Relevance: sehr hoch` haben, das sind zwei unabhaengige Achsen.
+- **Momentum** (`Accelerating` / `Stable` / `Declining`) — wie schnell veraendert sich der Trend gerade (Frequenz neuer Signale). Ein Trend mit `Validity: Confirmed` + `Momentum: Declining` bleibt weiterhin relevant und wird nicht automatisch geschlossen.
+- **Status** (`Active` / `Closed`) — reine Praxis-Flagge, ob der Trend noch aktiv beobachtet wird. Nur explizit auf `Closed` setzen, wenn der Trend sich erledigt hat oder voll eingepreist ist, nie automatisch nach X Wochen Funkstille.
+
+**Notion-DB:** **Trend Intelligence** (neu, https://app.notion.com/p/2ef69fef874a415f80e0707d22e6adb0, `collection://40199aae-78a5-403b-bdb1-865ee4beb21e`). Felder: Trend Name, Trend Description, First Detected, Last Updated, Validity, Momentum, Status, Independent Signal Count, Domains, Partner Relevance (Text), Letzte MVPeople Action, plus Relationen: `Zugehoerige Signale` (dual mit `Trend` auf External Signals), `Betroffene aktive Partner` (dual mit `Relevante Trends` auf Partner PR Profiles), `Letzte erzeugte Opportunity` (dual mit `Trend` auf Qualified Opportunities).
+
+## Zweistufiges Trend-to-Partner-Matching (seit 20.08.2026)
+
+Bei einem neuen oder materiell veraenderten Trend wird **nicht automatisch jeder aktive Partner vollstaendig tiefengematcht**:
+
+**Stage A — Candidate Filter:** schneller Plausibilitaetscheck anhand Opportunity Fields, Current Situation, Rolle/Karrierephase, dokumentierten Projekten/Initiativen, Domains, bestehenden Prioritaeten. Ergebnis: eine kleine Candidate Partner List. **Wichtig: der Filter ist reine Rechen-/Noise-Optimierung, keine zu enge Keyword-Logik** — er darf ungewoehnliche, aber hochwertige Cross-Domain-Matches nicht ausschliessen (Beispiel: Rangnick + Leadership-Studien-Cluster ist kein offensichtliches Keyword-Match, gehoert aber in die Candidate List). Im Zweifel eher zu breit als zu eng filtern.
+
+**Stage B — Deep Reasoning:** nur Candidate Partner durchlaufen den vollstaendigen Layer-4-Prozess (Standalone Idea Test, Unique Partner Contribution Test, Direct/Analogical, Value-Type-Pruefreihenfolge, Output-Klassifikation).
+
 ### Technische Grenzen (ehrlich, siehe `research-concept-draft.md` Abschnitt 9)
 
 Kein Login/Paywall-Zugriff, keine nativen Social-Media-APIs (LinkedIn/X/Reddit/TikTok/Instagram — nur oeffentlich indexierte Treffer), kein RSS-Aggregator/persistentes Feed-Monitoring, keine strukturierte Wissenschafts-API. Datumsverifikation bleibt der groesste Schwachpunkt — siehe Aktualitaets-Pflicht unten, im Zweifel verwerfen statt raten.
@@ -176,6 +200,34 @@ Zu generisch · nur lose zum Partner passend · nur relevant weil der Partner Sp
 
 Auch verwerfen: künstlich konstruierte Trends (mehrere lose Einzelbeispiele zu einem "Trend" zusammengebaut) und allgemeine Content-/Creative-Erkenntnisse ohne spezifischen externen Trigger (z.B. "authentische Formate performen besser" ist eine Content-Strategie-Beobachtung, keine externe Opportunity).
 
+## Value-Type-Pruefreihenfolge (Pflicht, seit 20.08.2026)
+
+Content ist niemals Default. Bei jedem Match zuerst fragen: *"Wenn wir keine Social-Media-Kanaele und keine Pressearbeit haetten — waere diese Information fuer den Partner trotzdem wertvoll?"* Pruefreihenfolge, in genau dieser Ordnung:
+
+```
+1. Strategic/Business → 2. Network/Relationship → 3. Knowledge/Advisory → 4. Creative/Positioning
+```
+
+Erst wenn 1-3 nachweislich nicht zutreffen, wird Creative/Content geprueft. Der Agent ist kein Content-Ideen-Agent und kein News-Matching-Agent, sondern ein **Opportunity Intelligence Layer**: Zweck ist, externe Veraenderungen zu erkennen und zu pruefen, ob daraus eine relevante Handlung, Entscheidung, Information, Beziehung oder Positionierungsmoeglichkeit entsteht — nicht zwingend Content.
+
+## Output-Klassifikation (ersetzt reine Score-Schwelle, seit 20.08.2026)
+
+Fuenf moegliche Ergebnisse pro Signal/Trend × Partner:
+
+- **ACT NOW** — unmittelbar ausfuehrbare, ausreichend validierte Opportunity mit vollstaendigem Reasoning.
+- **STRATEGIC** — die externe Entwicklung kann eine **konkrete aktuelle** Entscheidung, Verhandlung, Initiative, Investition, Karriereoption oder ein laufendes Projekt des Partners beeinflussen. Referenzbeispiel: Maximilian Arnold + Athlete-Equity-Trend — laufendes Motorsport-Projekt, Trend betrifft moegliche Deal-Struktur, zeitkritisch. Eine offene Frage an den Partner darf **Teil** der Next Best Action sein, verhindert die Opportunity aber nicht.
+- **KNOWLEDGE/ADVISORY** — relevante Entwicklung, die MVPeople dem Partner aktiv mitteilen sollte, obwohl aktuell keine konkrete Entscheidung/Initiative dadurch veraendert wird. **Hartes Gate (Pflichtfrage):** *"Wuerde MVPeople diese Information dem Partner ungefragt in einem Gespraech mitteilen, weil sie seinen Blick auf sein Geschaeft, seine Karriere, eine relevante Entwicklung oder seine aktuelle Situation substanziell verbessert?"* Wenn nein → NO ACTION. Reine Branchen-News, allgemeine Marktbeobachtung oder "koennte interessant sein" reicht ausdruecklich NICHT. Referenzbeispiel: Thomas Dorawa + Rule42-Plattform — relevant fuer sein Geschaeftsfeld, aber keine dokumentierte laufende Initiative betroffen.
+- **ASK PARTNER** — eine fehlende Partnerinformation entscheidet darueber, ob die Opportunity **ueberhaupt existiert** (nicht: ob sie schon ausformuliert ist). Referenzbeispiel: Mirko Slomka + HBR-Studie — ohne zu wissen, was "FOCUS NOW" konkret bedeutet, ist unklar, ob die Verbindung zur Studie ueberhaupt traegt.
+- **NO ACTION** — interessant, aber aktuell kein ausreichend relevanter Mehrwert. Referenzbeispiel: Rachid Azzouzi + einzelne Mertesacker-Personalie (ohne Trend-Cluster-Kontext) — Karriereweg passt grundsaetzlich zum neuen hybriden Rollentyp, aber ohne zusaetzlichen strategischen Mehrwert bleibt nur "fragen ob er sich positionieren will", das reicht nicht.
+
+Nur ACT NOW / STRATEGIC / KNOWLEDGE-ADVISORY / ASK PARTNER erzeugen eine Seite in Qualified Opportunities. NO ACTION bleibt nur als `Partner Match Status` auf dem Signal dokumentiert, keine eigene Seite.
+
+**Verhaeltnis zum bisherigen Scoring:** der numerische `Opportunity Score` (0-100) und die Gates (Partner Fit ≥20/30, Differentiation ≥12/20) bleiben als unterstuetzende Priorisierung/Dringlichkeit erhalten, sind aber **nicht mehr der primaere Gatekeeper** — das ist jetzt die Output-Klassifikation selbst, die den Standalone Idea Test und Unique Partner Contribution Test bereits strukturell einschliesst.
+
+## Opportunity Deduplication (Pflicht, seit 20.08.2026)
+
+Vor jeder neuen Opportunity pruefen: *"Ist das wirklich eine neue Handlungsmoeglichkeit, oder nur neue Evidenz fuer eine bereits bekannte Opportunity/einen bekannten Trend?"* Nur neue Evidenz → bestehende Opportunity aktualisieren (Felder ergaenzen, `Last Updated`-artige Hinweise in `Risk / Open Question`), NICHT neu anlegen. Echte neue Konsequenz (siehe Materialitaets-Check oben) → neue Opportunity erlaubt, mit Verweis auf den Trend.
+
 ## Quality Gate — 6 Fragen vor jeder Opportunity-Erstellung
 
 1. **Warum sollte ausgerechnet DIESER Partner eine besonders glaubwuerdige, differenzierende Perspektive beitragen** (nicht nur eine abstrakte Analogie/Berufsgruppen-Aehnlichkeit)?
@@ -209,14 +261,17 @@ Alle Inhalte, die in Notion geschrieben werden (Opportunity-Felder, Signal-Besch
 Drei Datenbanken, bewusst schlank gehalten, alle unter der Seite "Daily check in - Opportunities" (https://app.notion.com/p/3b98a3603dd480d8961ade12b3fab28c):
 
 - **External Signals** (Level 1, https://app.notion.com/p/dcf96467fae34f858b804faa255426e1, `collection://380f828e-5102-4593-9810-9e23817cb1f3`): jedes partnerunabhaengig gepruefte Signal, inkl. Signal Strength Score (0-100), Time Horizon, Signal Type/Signal Angle, und Partner Match Status (No Match / Under Review / **Potential Match** / Matched - Opportunity Created). Bei Potential Match zusaetzlich befuellt: `Partner` (Relation), `Match Type`, `Partner Question`, `Next Best Action`. Hier duerfen auch Signale landen, die keinen Partner-Match ergeben — das ist erwuenscht, nicht "verschwendete" Recherche.
-- **Qualified Opportunities** (Level 2, https://app.notion.com/p/ae5ffc818de34a6e9b937f20d48bdac4, `collection://eab8b976-d9ef-47c3-a797-9760f78c994c`): nur wenn alle drei Scoring-Bedingungen erfuellt sind. **20-Sekunden-Regel (seit 15.08.2026):** Die fuenf wichtigsten Felder muessen so knapp formuliert sein, dass ein MVPeople-Mitarbeiter eine Opportunity morgens in ca. 20 Sekunden erfassen und bewerten kann — das sind die primaeren Pflichtfelder fuer die Hauptansicht:
-  - **Signal** = External Trigger: was ist konkret extern passiert (1-2 Saetze, keine Herleitung).
-  - **Why This Partner**: warum ist genau dieser Partner besonders relevant (1-2 Saetze, siehe Grundregel oben).
-  - **Timing** = Why Now: warum besteht gerade jetzt ein sinnvolles Zeitfenster (1 Satz).
-  - **Next Best Action**: was MVPeople konkret tun soll (1 Satz, kein "beobachten").
-  - **Urgency** (Select: Today / This Week / Watch): wie dringend.
+- **Qualified Opportunities** (Level 2, https://app.notion.com/p/ae5ffc818de34a6e9b937f20d48bdac4, `collection://eab8b976-d9ef-47c3-a797-9760f78c994c`): nur bei Output-Klasse ACT NOW/STRATEGIC/KNOWLEDGE-ADVISORY/ASK PARTNER (siehe oben). **30-Sekunden-Regel (seit 20.08.2026, verschaerft):** die Kernfelder muessen so knapp formuliert sein, dass ein MVPeople-Mitarbeiter eine Opportunity morgens in ca. 30 Sekunden versteht:
+  - **Output-Klasse** (Select: ACT NOW/STRATEGIC/KNOWLEDGE-ADVISORY/ASK PARTNER) — wichtigste Einordnung, nicht der Score.
+  - **What Changed**: was ist extern konkret neu (External Fact, 1-2 Saetze, keine Herleitung).
+  - **Why This Partner**: warum betrifft es genau diesen Partner.
+  - **So What**: was veraendert diese Information fuer den Partner (Pflichtfeld, expliziter Konsequenz-Satz).
+  - **Next Best Action**: was MVPeople konkret tun soll.
+  - **Value Type** (Select: Strategic/Network/Knowledge/Creative) — Ergebnis der Pruefreihenfolge oben.
+  - **Confidence** (Select: Explicit/Strongly Inferred/Hypothesis) — ersetzt "Evidence Level".
 
-  Weitere Felder: Opportunity Title, Partner (Relation), Opportunity Type, The Opportunity (etwas ausfuehrlicher, was konkret daraus werden kann), Owner, Opportunity Score, Priority, Status (New/Approved/Rejected/Actioned), Source, Source Date, Date Discovered. Sekundaer/Detail: Risk / Open Question, Evidence Level, Recommended Format, Partner Question, Watch Date, Related Project. Relation "Source Signal" verbindet zurueck zur External Signals DB.
+  Weitere Felder: Opportunity Title (Format `[Vorname Nachname]: [Headline]`), Partner (Relation), Opportunity Type, Trend (Relation zu Trend Intelligence, optional — nur befuellt wenn aus einem Cluster statt Einzelsignal entstanden), Timing/Why Now, Owner, Opportunity Score, Priority, Time Horizon, Match Type, Status (New/Approved/Rejected/Actioned), Source, Source Date, Date Discovered. Sekundaer/Detail: Risk / Open Question, Recommended Format, Partner Question, Watch Date, Related Project, MVPeople Feedback. Relation "Source Signal" verbindet zurueck zur External Signals DB.
+- **Trend Intelligence** (Level 1.5, neu seit 20.08.2026, https://app.notion.com/p/2ef69fef874a415f80e0707d22e6adb0, `collection://40199aae-78a5-403b-bdb1-865ee4beb21e`): siehe eigener Abschnitt oben.
 - **Partner PR Profiles** (geteilt mit `pr-scan`, `collection://365179bc-d750-4d4d-b4d5-08ac85b66b8d`): keine eigene Partners-DB, sondern dieselbe Quelle wie pr-scan nutzen. Erweitert um **"Aktuelle Prioritaeten (Ranking)"** (Freitext, priorisierte Liste), **"Current Situation"** (Multi-Select), **"Opportunity Fields"** + **"Opportunity Fields Evidence"** (destilliert aus vorhandenen Daten, siehe Stufe 2), **"Unterrepraesentierte Opportunity Fields (30d)"** + **"Letzter Gap-Check"** (siehe Weekly Gap Analysis unten), **"Naechstes Meeting"** (Date, fuer Partner Matching Priority). Fuer alle 14 aktiven Partner am 18.08.2026 einmalig befuellt (Opportunity Fields), danach progressiv aktualisieren, sobald ein Partner ohnehin bearbeitet wird.
 
 ## Weekly Gap Analysis (seit 18.08.2026)
@@ -278,23 +333,27 @@ Es gibt **keine zentrale** Creativity-Datenbank — jeder Partner hat seine eige
 
 Kein Newsfeed. Ziel: ein MVPeople-Mitarbeiter versteht in 2-3 Minuten, was seit den letzten Tagen extern passiert ist, das fuer einen Partner wirklich relevant sein koennte — maximal 3-5 starke Punkte pro Partner, nicht 20 News.
 
-Format pro Partner — Qualified Opportunities zuerst:
+Format pro Partner — nach Output-Klasse gruppiert (seit 20.08.2026), nicht nach Score:
 
 ```
-🔥 [Score]/100 – [Partner]
-Extern: [was ist konkret passiert, 1-2 Saetze]
-Warum [Partner]: [1-2 Saetze, warum aussergewoehnlich guter Fit]
+🎯 ACT NOW – [Partner]
+What Changed: [was ist extern konkret neu]
+Why This Partner: [1-2 Saetze]
+So What: [Konsequenz]
 Next Best Action: [konkret]
 Quelle: [Quelle] · [Datum]
-```
 
-Zusaetzlich (seit 18.08.2026) eine **kuratierte Auswahl** der staerksten Potential Matches mit befuellter Partner Question — nicht alle, nur die relevantesten:
+📊 STRATEGIC – [Partner]
+What Changed: [...] / Why This Partner: [...] / So What: [konkrete Entscheidung/Projekt, das betroffen ist]
+Next Best Action: [...]
 
-```
-❓ [Partner] – Potential Match
-Extern: [was ist passiert]
-Frage an Partner: [Partner Question]
-Next Best Action: [z.B. "im naechsten Meeting ansprechen"]
+💡 KNOWLEDGE/ADVISORY – [Partner]
+What Changed: [...] / Why This Partner: [...]
+Next Best Action: [z.B. "im naechsten Gespraech als Wissens-Update mitteilen"]
+
+❓ ASK PARTNER – [Partner]
+What Changed: [...] / Warum die Verbindung noch unklar ist: [...]
+Partner Question: [...]
 ```
 
 External Signals ohne Match (No Match) bleiben im System-Layer und tauchen im Check-in nicht auf. Wenn nichts Starkes gefunden wurde: **"Heute keine Opportunities mit ausreichender Qualitaet."** Das ist ein explizit erwuenschtes, valides Ergebnis — niemals eine schwache Opportunity nur erzeugen, um Output zu liefern.
