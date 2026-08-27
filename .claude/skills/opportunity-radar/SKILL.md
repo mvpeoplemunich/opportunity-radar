@@ -22,6 +22,61 @@ Externe Welt → relevantes Signal (partnerunabhaengig geprueft) → Signal-Qual
 
 **Explizit NICHT:** Partner → Themenprofil → passende externe Info suchen → Content-Idee konstruieren. Der Partner-Knowledge-Layer (Partner PR Profiles, Meetings, Content-Historie) ist **ausschliesslich Filter und Matching-System, niemals die Quelle** der Opportunity. Eine Opportunity muss immer mit einem eigenstaendig relevanten externen Signal beginnen — nicht mit einem Partner-Thema, zu dem im Netz etwas gesucht wurde.
 
+## Vereinfachte Alltagslogik (Pflicht, seit 26.08.2026 — geht der Scoring-Mechanik vor)
+
+Der Sinn des Systems ist NICHT: moeglichst viele Opportunities, abstrakte Business-Intelligence, aus jeder Entwicklung eine Positionierungschance ableiten, oder Themen kuenstlich mit Partnern verknuepfen. Der Sinn ist: aktuelle externe Themen finden, die zu einem konkreten Partner UND seiner AKTUELLEN Situation passen, sodass MVPeople entscheiden kann: **Meeting vertiefen? Direkt Content? Nur intern relevant?**
+
+**Die zentrale Frage bei jedem Signal/Trend:** *"Ist dieses aktuelle externe Thema fuer genau diesen Partner relevant genug, dass MVPeople konkret etwas damit anfangen kann?"* — nicht "kann ich irgendeine Verbindung herstellen" oder "koennte der Partner das theoretisch kommentieren".
+
+### Vier Pflichtpruefungen
+
+**A. Aktueller externer Aufhaenger.** Was ist konkret neu/aktuell/relevant? Ohne klaren Aufhaenger → keine Opportunity. "Studie bestaetigt, was der Partner sowieso schon sagt" oder ein reiner Karriere-/Berufsgruppen-Vergleich reichen nicht als Aufhaenger.
+
+**B. Partner-Relevanz MUSS aktuell sein.** Nutze die neueste bestaetigte Information (Meetings, Current Situation, Profil) — aeltere Annahmen werden ueberschrieben. Widerspricht der aktuelle Partnerzustand der Opportunity → NO ACTION. Beispiele: Partner ist nicht mehr auf Jobsuche → keine Jobsuche-Opportunity. Investment ist bereits abgeschlossen → keine Opportunity auf Basis einer noch offenen Entscheidung. Partner will ein Thema nur in Keynotes behandeln → kein LinkedIn-Vorschlag.
+
+**C. Verwertbarkeit — was kann MVPeople konkret damit machen?** Genau eine von drei Nutzungsarten:
+- **MEETING**: Thema passt, aber persoenliche Haltung/Erfahrung/Meinung des Partners fehlt noch → Output: konkrete Frage fuers naechste Gespraech.
+- **CONTENT**: Aufhaenger klar, genug bestaetigtes Partnerwissen vorhanden, direkt ein glaubwuerdiger Kommunikationsansatz ableitbar → Output: konkreter Angle (LinkedIn/Reel/Video/Interview/PR-Pitch/Statement).
+- **INTERNAL**: relevant fuer Positionierung/Strategie/Branchenwissen, aber aktuell kein sinnvoller oeffentlicher Anlass → Output: klare Begruendung, warum MVPeople das trotzdem wissen sollte.
+
+**Content ist nicht Standard.** Immer zuerst pruefen, ob MEETING oder INTERNAL wertvoller ist als ein erzwungener Post — ein guter Meeting-Input ohne jemals daraus entstehenden Content ist ein gutes Ergebnis, kein halbfertiges.
+
+**D. Why Now?** Muss ueber "das Thema passt grundsaetzlich zum Partner" hinausgehen — es braucht einen echten aktuellen Aufhaenger (siehe A).
+
+### Vereinfachte Output-Klassen (zentrale Alltagslogik)
+
+`MEETING` · `CONTENT` · `INTERNAL` · `NO ACTION`. Die technischen Klassen (ACT NOW/STRATEGIC/KNOWLEDGE-ADVISORY/ASK PARTNER) bleiben im Datenmodell fuer Routing erhalten, aber im taeglichen Workflow und Morning Check-in zaehlt ausschliesslich diese vierteilige Logik. Grobe Entsprechung: ASK PARTNER → MEETING, ACT NOW/STRATEGIC mit vollstaendigem Payload → CONTENT, KNOWLEDGE/ADVISORY ohne Content-Anlass → INTERNAL.
+
+### Qualified Opportunity — neue Definition
+
+Ein aktuelles externes Thema, das aufgrund der AKTUELLEN Situation, Ziele, Positionierung oder Kommunikation eines konkreten Partners so relevant ist, dass MVPeople daraus JETZT ein Gespraech, einen Kommunikationsansatz oder eine interne Handlung ableiten kann.
+
+**Explizit KEINE Qualified Opportunity:** bloße thematische Aehnlichkeit · interessante Branchen-News ohne konkreten Partnerbezug · "Studie bestaetigt, was Partner sowieso sagt" · generischer Karrierevergleich · **generische Leadership-/Performance-Verbindung** · Information, die Partner/MVPeople bereits kennen · bereits abgeschlossene Entscheidung · veraltete Partner-Situation.
+
+### Pflichtfeld "Aufhaenger" + Quellenanforderung
+
+Jede Opportunity braucht ein Feld `Aufhaenger` (max. 2 Saetze): *"Was ist aktuell passiert, und warum eroeffnet genau das jetzt eine Moeglichkeit?"* Ohne ueberzeugenden Aufhaenger → keine Opportunity.
+
+Quelle muss konkret nachvollziehbar sein: Artikel-/Dokumenttitel, Publisher, Veroeffentlichungsdatum, direkter Link, kurze Angabe welche zentrale Aussage die Quelle belegt. "fifa.com" allein reicht nicht — konkreter Artikeltitel + Datum + Link sind Pflicht. Ohne nachvollziehbare Quelle → keine Opportunity.
+
+### Already Known / Already Done (Pflichtcheck)
+
+Vor jeder Opportunity pruefen: ist das fuer Partner/MVPeople wirklich neu? Wenn bereits bekannt/besprochen/umgesetzt/entschieden/Teil der Strategie UND das Signal keine neue Konsequenz erzeugt → NO ACTION.
+
+### 30-Sekunden-Output (Morning Check-in, ersetzt bisheriges Format)
+
+```
+[Partnername]: [kurze Headline]
+Aufhaenger: [was ist aktuell passiert, 2 Saetze]
+Warum dieser Partner: [warum passt das zu aktuellen Zielen/Positionierung/Kommunikation]
+Empfehlung: MEETING / CONTENT / INTERNAL
+Was konkret tun: [eine klare naechste Handlung]
+Quelle: [Artikeltitel, Publisher, Datum, Link]
+Risiko/offene Frage: [nur falls relevant]
+```
+
+Alles Weitere (Confidence, Value Type, Time Horizon, Match Type, Trend-Verknuepfung) bleibt sekundaer auf der Detailseite. Keine kuenstliche Mindestmenge — "Heute keine relevanten Opportunities" ist ein gutes Ergebnis.
+
 ## Stufe 1: External Discovery — zweistufig (seit 18.08.2026)
 
 ```
