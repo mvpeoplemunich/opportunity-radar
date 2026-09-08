@@ -43,6 +43,34 @@ Der Sinn des Systems ist NICHT: moeglichst viele Opportunities, abstrakte Busine
 
 **D. Why Now?** Muss ueber "das Thema passt grundsaetzlich zum Partner" hinausgehen — es braucht einen echten aktuellen Aufhaenger (siehe A).
 
+### Verschaerfte Relevanzqualifizierung (Pflicht, seit 08.09.2026 — praezisiert A-D nach Fehleranalyse zu viel formal plausibler, praktisch irrelevanter Opportunities)
+
+Trotz der vier Pflichtpruefungen oben entstanden weiterhin Opportunities, die formal korrekt aussehen, aber keinen echten Partner-Nutzen haben. Diese Praezisierung geht der bisherigen Formulierung von C und D vor.
+
+**Fuenf zulaessige Nutzenarten (mindestens eine muss klar zutreffen):**
+1. Das Thema zahlt auf ein aktuelles Ziel des Partners ein.
+2. Das Thema passt zu einem aktiven Kommunikationsfeld des Partners.
+3. Das Thema beruehrt eine aktuelle Entscheidung, Rolle, Situation oder Initiative des Partners.
+4. Das Thema kann im naechsten Meeting eine substanziell gute Frage ausloesen.
+5. Das Thema eroeffnet einen glaubwuerdigen Content-/PR-Anlass, den genau dieser Partner sinnvoll besetzen kann.
+
+**Reine thematische Naehe reicht nicht.** Wenn die gesamte Begruendung nur eine Kategorie-Zuordnung ist — Beispiele: *"Trainer → Leadership"*, *"Athlet → Podcast"*, *"Agentur → Athlete Ownership"*, *"Sportdirektor → neue Sportdirektorrolle"* — ohne dass eine der fuenf Nutzenarten oben konkret (mit Beleg aus aktuellem Partnerwissen) ausformuliert ist: → NO ACTION. Eine mit "falls seine Erfahrung/Haltung dazu passt" oder "koennte relevant sein" formulierte Verbindung ist ein Warnsignal fuer genau dieses Muster, kein Freifahrtschein fuer ASK PARTNER/MEETING.
+
+**Partner Fit -- Checkliste vor jedem Match (mind. ein klarer Treffer noetig):** aktuelle Rolle · aktuelle Ziele · aktuelle Kommunikationsfelder · bestehende Projekte · aktuelle Prioritaeten · bekannte Interessen · bereits als unpassend markierte Themen (siehe Human Feedback Check/Rejected Topics) · Themen, die der Partner bewusst nicht kommunikativ besetzen moechte. Ohne klaren Bezug zu mindestens einem Punkt: keine Partner-Opportunity.
+
+**Harte Prueffrage vor jeder Opportunity:** *"Wenn ich diesem Partner dieses Thema morgen im Gespraech vorlege: Wuerde er wahrscheinlich sagen 'Ja, das ist fuer mich gerade relevant'?"* Nicht klar mit Ja begruendbar → `NO ACTION` oder `MVPeople Internal` (siehe unten), niemals trotzdem als MEETING/CONTENT ausspielen in der Hoffnung, dass sich im Gespraech schon was ergibt.
+
+**Partner Opportunity vs. MVPeople Internal (schaerfere Trennung als bisherige INTERNAL-Definition):**
+- **PARTNER OPPORTUNITY**: konkret relevant fuer einen einzelnen Partner, nutzbar in Meeting/Content/Kommunikation — braucht Partner-Relation und einen der fuenf Nutzenarten oben.
+- **MVPEOPLE INTERNAL**: interessant fuer MVPeople als Agentur, Marktbeobachtung, Business Intelligence oder strategisches Wissen, aber nicht konkret genug fuer einen einzelnen Partner. Bekommt **keine** Partner-Relation (oder eine rein illustrative, klar als solche gekennzeichnet) und Owner "MVPeople (allgemein)" — wird nicht kuenstlich einem Partner zugeschlagen, nur weil dessen Berufsgruppe/Rolle thematisch passt. Beispiel: "Athlete Equity wird Standard" ist als Markttrend potenziell MVPeople Internal, aber keine automatische Thomas-Dorawa- oder X-Beliebiger-Athlet-Opportunity — eine Agenturrolle oder eine Sportlerkarriere allein reicht nicht als Partner-Fit fuer dieses Thema.
+
+**Haertere Aktualitaetspruefung:** `Date Discovered` ist NICHT gleichbedeutend mit Aktualitaet. Vor jeder Opportunity pruefen: tatsaechliches Veroeffentlichungsdatum, tatsaechliches Ereignisdatum, ob das Thema noch Momentum besitzt, ob es bereits Wochen/Monate alt ist ohne neuen Trigger seither. Eine Personalie oder ein Abkommen, das vor Monaten entschieden/unterzeichnet wurde und seither keine neue Entwicklung hatte, ist keine aktuelle Opportunity mehr — auch wenn sie erst kuerzlich entdeckt/verarbeitet wurde. Eine "Umsetzungsphase" ohne neuen konkreten Trigger ist kein ausreichender Aktualitaetsnachweis, wenn seit der urspruenglichen Meldung bereits mehrere Monate vergangen sind.
+
+**Partnerspezifisch bereits korrigierte generische Muster (gelten als Praezedenzfall, nicht nur Einzelfall-Ablehnung):**
+- **Auslandserfahrung/internationale Trainerlaufbahn allein** ist kein ausreichender Partner-Fit fuer Kulturtransfer-/Auslandstrainer-Studien — betrifft nicht nur Thomas Reis, sondern jeden Partner mit internationaler Station.
+- **Allgemeine Wirtschaftlichkeits-News zu einem Format** (z.B. "Podcast X macht Millionen") sind nicht automatisch relevant fuer jeden Partner mit einem Podcast/Content-Format in diesem Bereich — nur bei dokumentiertem Bezug zu einem konkreten laufenden Projekt, Monetarisierungsziel, Formatentwicklung oder Businessmodell.
+- **Eine Agentur-/Berater-Rolle allein** macht Themen wie Athlete Ownership/Sport-Investing nicht automatisch zur Partner-Opportunity fuer diesen Berater — das ist eher MVPeople Internal (siehe oben).
+
 ### Vereinfachte Output-Klassen (zentrale Alltagslogik)
 
 `MEETING` · `CONTENT` · `INTERNAL` · `NO ACTION`. Die technischen Klassen (ACT NOW/STRATEGIC/KNOWLEDGE-ADVISORY/ASK PARTNER) bleiben im Datenmodell fuer Routing erhalten, aber im taeglichen Workflow und Morning Check-in zaehlt ausschliesslich diese vierteilige Logik. Grobe Entsprechung: ASK PARTNER → MEETING, ACT NOW/STRATEGIC mit vollstaendigem Payload → CONTENT, KNOWLEDGE/ADVISORY ohne Content-Anlass → INTERNAL.
@@ -428,3 +456,5 @@ External Signals ohne Match (No Match) bleiben im System-Layer und tauchen im Ch
 ## Erfolgskriterium
 
 Das System funktioniert, wenn ein MVPeople-Mitarbeiter denkt: *"Spannend — das ist tatsaechlich gerade draussen passiert, und ich waere selbst wahrscheinlich nicht darauf gekommen, dass es so gut zu diesem Partner passt."* Es funktioniert NICHT, wenn der Eindruck entsteht: "Die KI kennt die Partner-Themen und hat irgendeinen Artikel dazu gefunden." External First. Partner Second. Lieber nichts ausspielen als eine mittelmaessige Opportunity.
+
+**Praezisierung seit 08.09.2026:** Eine Opportunity ist nur erfolgreich, wenn ein MVPeople-Mitarbeiter beim Lesen sofort sagen kann: *"Ja, das ist fuer diesen Partner gerade relevant, und wir wissen, was wir damit machen koennen."* Wenn die ehrliche Reaktion nur "interessant irgendwie" waere → keine Qualified Opportunity, sondern NO ACTION oder MVPeople Internal. Weniger Output ist ausdruecklich erwuenscht — Ziel ist nicht mehr Matching, Ziel ist Relevanz.
